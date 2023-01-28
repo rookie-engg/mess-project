@@ -1,0 +1,67 @@
+$rotateIcon: 10deg;
+$menuItemBg: #3d4451cb;
+
+.menuItem {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  border-radius: 8px;
+  padding: .8rem;
+  background-color: $menuItemBg;
+  cursor: pointer;
+  width: 100%;
+  user-select: none;
+  gap: 1rem;
+
+  &:active {
+    background-color: #323842cb;
+
+    .icon {
+      transform: rotate(0);
+    }
+  }
+
+  &:nth-child(even):hover {
+    background-color: #383e4acb;
+
+    .icon {
+      transform: rotate($rotateIcon);
+    }
+  }
+
+  &:nth-child(odd):hover {
+    background-color: #383e4acb;
+
+    .icon {
+      transform: rotate(-1 * $rotateIcon);
+    }
+  }
+}
+
+.title {
+  text-transform: capitalize;
+  flex: 1;
+  font-size: larger;
+  text-align: start;
+}
+
+.icon {
+  transition: .1s ease;
+  border: none;
+}
+
+img {
+  object-fit: contain;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.active {
+
+  &:nth-child(odd):hover,
+  &:nth-child(even):hover {
+    background-color: #3674e8d7;
+  }
+
+  background-color: #3674e8f1;
+}
